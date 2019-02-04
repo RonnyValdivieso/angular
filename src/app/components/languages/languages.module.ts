@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { LanguagesComponent } from './languages.component';
-import { TimeAgoPipe } from 'time-ago-pipe';
 
 @NgModule({
-declarations: [LanguagesComponent, TimeAgoPipe],
+declarations: [],
 imports: [SharedModule],
-providers: [TimeAgoPipe],
+providers: [],
 exports: [SharedModule]
 })
 export class LanguagesModule { }

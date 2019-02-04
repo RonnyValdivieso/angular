@@ -3,7 +3,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { FrameworksComponent } from './frameworks.component';
 
 @NgModule({
-declarations: [FrameworksComponent],
+declarations: [],
 imports: [SharedModule],
 providers: [],
 exports: [SharedModule]

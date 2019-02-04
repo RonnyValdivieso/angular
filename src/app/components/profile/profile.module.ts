@@ -3,7 +3,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { ProfileComponent } from './profile.component';
 
 @NgModule({
-declarations: [ProfileComponent],
+declarations: [],
 imports: [SharedModule],
 providers: [],
 exports: [SharedModule]
