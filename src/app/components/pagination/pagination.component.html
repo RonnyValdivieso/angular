@@ -1,11 +1,24 @@
 <h1>Pagination</h1>
 
-<ul class="lead-list">
-  <ng-container *ngFor="let lead of data">
-    <ng-container *ngFor="let info of lead.data">
-      <li *ngIf="info.name == 'nombre_y_apellido'">{{ info.values }}</li>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of data">
+      <tr>
+        <ng-container *ngFor="let data of item.data">
+          <td *ngIf="data.name == 'nombre_y_apellido'">{{data.values}}</td>
+        </ng-container>
+        <ng-container *ngFor="let data of item.data">
+          <td class="" *ngIf="data.name == 'correo'">{{data.values}}</td>
+        </ng-container>
+      </tr>
     </ng-container>
-  </ng-container>
-</ul>
+  </tbody>
+</table>
 
 <p-paginator [rows]="itemsPerPage" [totalRecords]="totalDocs" pageLinkSize="3" (onPageChange)="getLeadsByPage($event)"></p-paginator>

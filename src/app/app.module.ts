@@ -15,6 +15,7 @@ import { NgxPaginationModule } from "ngx-pagination";
 import { HttpClientModule } from '@angular/common/http';
 import { PaginatorModule } from "primeng/paginator";
 import { DataTableModule } from 'primeng/datatable';
+import { RealTimeComponent } from './components/real-time/real-time.component';
 
 @NgModule({
 	declarations: [
@@ -23,7 +24,8 @@ import { DataTableModule } from 'primeng/datatable';
 		ProfileComponent,
 		TimeAgoPipe,
 		CustomDateTime,
-		PaginationComponent
+		PaginationComponent,
+		RealTimeComponent
 	],
 	imports: [
 		HttpClientModule,

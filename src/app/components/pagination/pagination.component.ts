@@ -36,6 +36,7 @@ export class PaginationComponent implements OnInit {
         this.totalDocs = response.totalDocs;
         this.loading = true;
         console.log("Response");
+        console.log(this.data);
       });
   }
 
