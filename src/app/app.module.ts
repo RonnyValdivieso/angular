@@ -13,6 +13,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { LeadService } from './services/lead/lead.service';
 import { NgxPaginationModule } from "ngx-pagination";
 import { HttpClientModule } from '@angular/common/http';
+import { PaginatorModule } from "primeng/paginator";
+import { DataTableModule } from 'primeng/datatable';
 
 @NgModule({
 	declarations: [
@@ -30,6 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
 		SharedModule,
 		MomentModule,
 		NgxPaginationModule,
+		PaginatorModule,
+		DataTableModule
 	],
 	exports: [SharedModule],
 	providers: [
