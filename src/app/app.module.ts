@@ -9,6 +9,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { MomentModule } from 'ngx-moment';
 import { CustomDateTime } from './pipes/custom-date.pipe';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { LeadService } from './services/lead/lead.service';
+import { NgxPaginationModule } from "ngx-pagination";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -16,16 +20,22 @@ import { CustomDateTime } from './pipes/custom-date.pipe';
 		DashboardComponent,
 		ProfileComponent,
 		TimeAgoPipe,
-		CustomDateTime
+		CustomDateTime,
+		PaginationComponent
 	],
 	imports: [
+		HttpClientModule,
 		BrowserModule,
 		AppRoutingModule,
 		SharedModule,
-		MomentModule
+		MomentModule,
+		NgxPaginationModule,
 	],
 	exports: [SharedModule],
-	providers: [CustomDateTime],
+	providers: [
+		CustomDateTime,
+		LeadService
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

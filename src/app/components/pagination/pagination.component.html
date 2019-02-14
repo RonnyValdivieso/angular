@@ -1,0 +1,12 @@
+<h1>Pagination</h1>
+
+<ul class="lead-list">
+  <li *ngFor="let lead of data | async | paginate: { id: 'server', itemsPerPage: itemsPerPage, currentPage: page }">
+    {{ lead }}
+  </li>
+</ul>
+
+<div class="has-text-centered">
+  <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div>
+  <pagination-controls (pageChange)="getLeadsByPage($event)" id="server"></pagination-controls>
+</div>
