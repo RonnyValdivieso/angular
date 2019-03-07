@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  leadsUri: 'https://leadbob.io/api/v1/lead'
+  apiUrl: 'https://leadbob.io/dev/v1',
+  leadsUri: 'https://leadbob.io/dev/v1/lead'
 };
 
 /*

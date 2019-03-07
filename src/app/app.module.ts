@@ -19,6 +19,9 @@ import { RealTimeComponent } from './components/real-time/real-time.component';
 import { RequestInterceptor } from './interceptors/request.interceptor';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { TabsComponent } from './components/tabs/tabs.component';
+import { LoginComponent } from './components/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
 	declarations: [
@@ -30,6 +33,8 @@ import { TabsComponent } from './components/tabs/tabs.component';
 		PaginationComponent,
 		RealTimeComponent,
 		TabsComponent
+		LoginComponent,
+		PageNotFoundComponent
 	],
 	imports: [
 		HttpClientModule,
@@ -50,7 +55,12 @@ import { TabsComponent } from './components/tabs/tabs.component';
       provide: HTTP_INTERCEPTORS,
       useClass: RequestInterceptor,
       multi: true
-    }
+    },
+    {
+			provide: HTTP_INTERCEPTORS,
+			useClass: TokenInterceptor,
+			multi: true
+		}
 	],
 	bootstrap: [AppComponent]
 })

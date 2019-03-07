@@ -5,11 +5,19 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { RealTimeComponent } from './components/real-time/real-time.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { LoginComponent } from './components/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AuthGuard } from './guards/auth-guard.service';
 
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [ AuthGuard ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'profile',
@@ -26,6 +34,10 @@ const routes: Routes = [
   {
     path: 'tabset',
     component: TabsComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 
