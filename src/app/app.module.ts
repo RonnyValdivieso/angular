@@ -12,10 +12,13 @@ import { CustomDateTime } from './pipes/custom-date.pipe';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { LeadService } from './services/lead/lead.service';
 import { NgxPaginationModule } from "ngx-pagination";
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PaginatorModule } from "primeng/paginator";
 import { DataTableModule } from 'primeng/datatable';
 import { RealTimeComponent } from './components/real-time/real-time.component';
+import { LoginComponent } from './components/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
 	declarations: [
@@ -25,7 +28,9 @@ import { RealTimeComponent } from './components/real-time/real-time.component';
 		TimeAgoPipe,
 		CustomDateTime,
 		PaginationComponent,
-		RealTimeComponent
+		RealTimeComponent,
+		LoginComponent,
+		PageNotFoundComponent
 	],
 	imports: [
 		HttpClientModule,
@@ -40,7 +45,12 @@ import { RealTimeComponent } from './components/real-time/real-time.component';
 	exports: [SharedModule],
 	providers: [
 		CustomDateTime,
-		LeadService
+		LeadService,
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: TokenInterceptor,
+			multi: true
+		}
 	],
 	bootstrap: [AppComponent]
 })
