@@ -4,6 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { RealTimeComponent } from './components/real-time/real-time.component';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'real-time',
     component: RealTimeComponent
+  },
+  {
+    path: 'tabset',
+    component: TabsComponent
   }
 ];
 
