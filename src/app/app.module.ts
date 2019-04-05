@@ -22,6 +22,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TokenInterceptor } from './token.interceptor';
+import { TooltipComponent } from './components/tooltip/tooltip.component';
 
 @NgModule({
 	declarations: [
@@ -32,9 +33,10 @@ import { TokenInterceptor } from './token.interceptor';
 		CustomDateTime,
 		PaginationComponent,
 		RealTimeComponent,
-		TabsComponent
+		TabsComponent,
 		LoginComponent,
-		PageNotFoundComponent
+		PageNotFoundComponent,
+		TooltipComponent
 	],
 	imports: [
 		HttpClientModule,

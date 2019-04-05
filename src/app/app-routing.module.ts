@@ -8,6 +8,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AuthGuard } from './guards/auth-guard.service';
+import { TooltipComponent } from './components/tooltip/tooltip.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'tabset',
     component: TabsComponent
+  },
+  {
+    path: 'tooltip',
+    component: TooltipComponent
   },
   {
     path: '**',
