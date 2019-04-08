@@ -17,8 +17,8 @@ export class RealTimeComponent implements OnInit {
 	}
 
 	connect(): Rx.Subject<MessageEvent> {
-		this.socket = io("http://localhost:9000");
-		// this.socket = io("https://leadbob.io:443", {path:'/dev/api/socket.io'});
+		// this.socket = io("http://localhost:8080");
+		this.socket = io("https://leadbob.io:443", {path:'/dev/api/socket.io'});
 		// this.socket = io("https://leadbob.io:443", {path:'/test/socket.io'});
 		// this.socket = io("https://leadbob.io/dev/v1", {transport: ['websocket']});
 		// this.socket = io("https://io-server.herokuapp.com");

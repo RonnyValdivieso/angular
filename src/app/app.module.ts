@@ -19,6 +19,8 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TokenInterceptor } from './token.interceptor';
+import { TooltipComponent } from './components/tooltip/tooltip.component';
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
 	declarations: [
@@ -29,7 +31,8 @@ import { TokenInterceptor } from './token.interceptor';
 		RealTimeComponent,
 		TabsComponent,
 		LoginComponent,
-		PageNotFoundComponent
+		PageNotFoundComponent,
+		TooltipComponent
 	],
 	imports: [
 		HttpClientModule,
@@ -49,7 +52,8 @@ import { TokenInterceptor } from './token.interceptor';
 			provide: HTTP_INTERCEPTORS,
 			useClass: TokenInterceptor,
 			multi: true
-		}
+		},
+		AuthService
 	],
 	bootstrap: [AppComponent]
 })
