@@ -11,6 +11,7 @@ export class LanguagesComponent implements OnInit {
   createdAt = Date();
 
   constructor() {
+    
     this.languages = [
       'Javascript',
       'Ruby',

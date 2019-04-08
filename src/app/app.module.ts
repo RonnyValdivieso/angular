@@ -6,9 +6,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { TimeAgoPipe } from 'time-ago-pipe';
 import { MomentModule } from 'ngx-moment';
-import { CustomDateTime } from './pipes/custom-date.pipe';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { LeadService } from './services/lead/lead.service';
 import { NgxPaginationModule } from "ngx-pagination";
@@ -16,7 +14,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PaginatorModule } from "primeng/paginator";
 import { DataTableModule } from 'primeng/datatable';
 import { RealTimeComponent } from './components/real-time/real-time.component';
-import { RequestInterceptor } from './interceptors/request.interceptor';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { TabsComponent } from './components/tabs/tabs.component';
 import { LoginComponent } from './components/login/login.component';
@@ -28,11 +25,9 @@ import { TokenInterceptor } from './token.interceptor';
 		AppComponent,
 		DashboardComponent,
 		ProfileComponent,
-		TimeAgoPipe,
-		CustomDateTime,
 		PaginationComponent,
 		RealTimeComponent,
-		TabsComponent
+		TabsComponent,
 		LoginComponent,
 		PageNotFoundComponent
 	],
@@ -49,13 +44,7 @@ import { TokenInterceptor } from './token.interceptor';
 	],
 	exports: [SharedModule],
 	providers: [
-		CustomDateTime,
 		LeadService,
-		{
-      provide: HTTP_INTERCEPTORS,
-      useClass: RequestInterceptor,
-      multi: true
-    },
     {
 			provide: HTTP_INTERCEPTORS,
 			useClass: TokenInterceptor,
