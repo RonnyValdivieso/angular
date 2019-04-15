@@ -17,15 +17,15 @@ export class RealTimeComponent implements OnInit {
 	}
 
 	connect(): Rx.Subject<MessageEvent> {
-		// this.socket = io("http://localhost:8080");
-		this.socket = io("https://leadbob.io:443", {path:'/dev/api/socket.io'});
+		this.socket = io("http://localhost:8080");
+		// this.socket = io("https://leadbob.io:443", {path:'/dev/api/socket.io'});
 		// this.socket = io("https://leadbob.io:443", {path:'/test/socket.io'});
 		// this.socket = io("https://leadbob.io/dev/v1", {transport: ['websocket']});
 		// this.socket = io("https://io-server.herokuapp.com");
 		// this.socket = io("https://qbitcrmapi.herokuapp.com");
 
-		this.socket.on('status', (data) => {
-			console.log("Received message from Websocket Server => " + data)
+		this.socket.on('message', (data) => {
+			console.log("Received message from Websocket Server => " + data.message)
 		})
 
 		// let observable = new Observable(observer => {
@@ -39,7 +39,7 @@ export class RealTimeComponent implements OnInit {
 		// });
 
 		this.socket.on('connect', function () {
-			alert('Connected');
+			console.log('Connected');
 		});
 		
 		// We define our Observer which will listen to messages

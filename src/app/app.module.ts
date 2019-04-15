@@ -21,6 +21,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { TokenInterceptor } from './token.interceptor';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { AuthService } from './services/auth/auth.service';
+import { SocketService } from './services/socket.service';
 
 @NgModule({
 	declarations: [
@@ -53,7 +54,8 @@ import { AuthService } from './services/auth/auth.service';
 			useClass: TokenInterceptor,
 			multi: true
 		},
-		AuthService
+		AuthService,
+		SocketService
 	],
 	bootstrap: [AppComponent]
 })

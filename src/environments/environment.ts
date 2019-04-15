@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://leadbob.io/dev/v1',
+  apiUrl: 'http://localhost:8080/v1',
   leadsUri: 'https://leadbob.io/dev/v1/lead'
 };
 
